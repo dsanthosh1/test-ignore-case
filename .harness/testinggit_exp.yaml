@@ -34,4 +34,4 @@ pipeline:
                   identifier: Plugin_1
                   spec:
                     connectorRef: DockerTestk8
-                    image: plugins/slack
+                    image: plugins/Datta
