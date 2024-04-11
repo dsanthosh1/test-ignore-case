@@ -1,0 +1,39 @@
+pipeline:
+  name: Troubleshooting - 61370 git webhook
+  identifier: Troubleshooting_61370_git_webhook
+  projectIdentifier: Test
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: testignorecase
+        repoName: test-ignore-case
+        build: <+input>
+  stages:
+    - stage:
+        name: Test webhook connection
+        identifier: Test_webhook_connection
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: k8s_connector
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: Docker_connection
+                    image: alpine
+                    shell: Sh
+                    command: echo "Hello world"
