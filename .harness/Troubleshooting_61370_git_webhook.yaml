@@ -36,4 +36,4 @@ pipeline:
                     connectorRef: Docker_connection
                     image: alpine
                     shell: Sh
-                    command: echo "Hello worlllld"
+                    command: echo "Hello worlld"
