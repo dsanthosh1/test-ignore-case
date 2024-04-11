@@ -1,0 +1,14 @@
+inputSet:
+  name: test
+  identifier: test
+  orgIdentifier: default
+  projectIdentifier: Test
+  pipeline:
+    identifier: Troubleshooting_61370_git_webhook
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
